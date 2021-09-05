@@ -1,0 +1,48 @@
+.container {
+	width: 100%;
+	background-color: var(--main-bg-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Arimo", sans-serif;
+
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-decoration: none;
+				color: var(--text-main);
+
+				h1 {
+					font-weight: 900;
+				}
+			}
+		}
+
+		.links {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-family: "Roboto", sans-serif;
+			font-size: 1.5rem;
+
+			.default {
+				text-decoration: none;
+				color: var(--text-main);
+				margin: 0 1rem;
+			}
+
+			.active {
+				color: var(--text-highlighted);
+			}
+		}
+	}
+}

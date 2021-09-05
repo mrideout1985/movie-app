@@ -1,5 +1,5 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Roboto&display=swap");
 /* Document
    ========================================================================== */
 
@@ -7,6 +7,15 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+
+:root {
+	--main-bg-color: #3c5186;
+
+	/* text **/
+	--text-main: #fff;
+	--text-highlighted: #ff9810;
+}
+
 * {
 	box-sizing: border-box;
 }
