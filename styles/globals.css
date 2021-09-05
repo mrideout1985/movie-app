@@ -11,11 +11,12 @@
 :root {
 	--main-bg-color: #1c2b53;
 	--secondary-bg-color: #2d3855;
-	--tertiary-bg-color: #ff9810;
+	--tertiary-bg-color: #80ed99;
 
 	/* text **/
 	--text-main: #fff;
-	--text-highlighted: #ff9810;
+	--text-secondary: #b0ffc3e8;
+	--text-highlighted: #80ed99;
 }
 
 * {

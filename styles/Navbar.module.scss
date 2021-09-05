@@ -29,6 +29,7 @@
 
 	.links {
 		display: flex;
+		align-items: center;
 		font-family: "Roboto", sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
@@ -54,7 +55,7 @@
 		.styledinput {
 			border-radius: 15px;
 			outline: none;
-			border: 2px solid #ff9810;
+			border: 2px solid var(--tertiary-bg-color);
 			background: var(--secondary-bg-color);
 			font-size: 1rem;
 			height: 1.5rem;

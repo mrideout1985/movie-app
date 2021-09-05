@@ -1,0 +1,50 @@
+.container {
+	color: white;
+	a {
+		text-decoration: none;
+		color: white;
+
+		&:visited {
+			color: white;
+		}
+
+		h3 {
+			font-family: "Arimo", sans-serif;
+			font-weight: 100;
+			color: white;
+		}
+
+		.info {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			.rating {
+				display: flex;
+				justify-content: left;
+				align-items: center;
+				flex: 1;
+				margin: 0 1rem;
+			}
+			.general {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex: 1;
+				margin: 0 1rem;
+			}
+
+			.wide {
+				width: 100%;
+				margin: 0;
+				ul {
+					list-style: none;
+					padding: 0;
+					li {
+						font-weight: bold;
+						margin: 0.2rem 0;
+					}
+				}
+			}
+		}
+	}
+}
