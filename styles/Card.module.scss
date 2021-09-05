@@ -1,5 +1,13 @@
 .container {
 	color: white;
+	margin-top: 1rem;
+	box-shadow: 2px 2px 14px black;
+	transition: transform 0.25s ease-in;
+
+	&:hover {
+		box-shadow: 5px 5px 24px black;
+		transform: scale(1.03);
+	}
 	a {
 		text-decoration: none;
 		color: white;
@@ -12,6 +20,11 @@
 			font-family: "Arimo", sans-serif;
 			font-weight: 100;
 			color: white;
+			margin: 1rem 0 1rem 0;
+		}
+
+		.image {
+			border-radius: 10px;
 		}
 
 		.info {
@@ -23,14 +36,14 @@
 				justify-content: left;
 				align-items: center;
 				flex: 1;
-				margin: 0 1rem;
+				margin: 1rem;
 			}
 			.general {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				flex: 1;
-				margin: 0 1rem;
+				margin: 0;
 			}
 
 			.wide {
@@ -40,8 +53,9 @@
 					list-style: none;
 					padding: 0;
 					li {
-						font-weight: bold;
+						font-weight: 500;
 						margin: 0.2rem 0;
+						color: var(--text-highlighted);
 					}
 				}
 			}

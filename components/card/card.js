@@ -22,6 +22,7 @@ const Card = ({ id, title, release_date, vote_average, poster_path, known_for })
 			return known_for.map((media, i) => {
 				if (media) {
 					return (
+						// eslint-disable-next-line @next/next/link-passhref
 						<li key={i}><Link href={`/movie/${media.id}`}><div>{media.title?.length > 0 ? media.title : null}
 						</div></Link></li>
 					)
@@ -41,7 +42,7 @@ const Card = ({ id, title, release_date, vote_average, poster_path, known_for })
 			<Link href={`/movie/${id}`}>
 				<a>
 					<h3>{short_title(title)}</h3>
-					<Image src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
+					<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
 					<div className={styles.info}>
 
 						<div className={`${vote_average ? styles.rating : styles.dissapear}`}>
