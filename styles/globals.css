@@ -9,7 +9,9 @@
  */
 
 :root {
-	--main-bg-color: #3c5186;
+	--main-bg-color: #1c2b53;
+	--secondary-bg-color: #2d3855;
+	--tertiary-bg-color: #ff9810;
 
 	/* text **/
 	--text-main: #fff;
