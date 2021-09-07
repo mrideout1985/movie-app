@@ -21,7 +21,7 @@ function SvgCircle(props) {
         r={245}
         fill="url(#circle_svg__toning)"
         stroke={props.color || "green"}
-        strokeWidth={20}
+        strokeWidth={25}
         strokeMiterlimit={10}
       />
 
