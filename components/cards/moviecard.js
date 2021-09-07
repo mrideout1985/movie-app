@@ -6,7 +6,7 @@ import Circle from '../icons/Circle'
 import { useRouter } from 'next/router'
 
 
-const Card = ({ id, title, release_date, vote_average, poster_path, known_for }) => {
+const MovieCard = ({ id, title, release_date, vote_average, poster_path }) => {
 
 	const router = useRouter()
 
@@ -50,7 +50,7 @@ const Card = ({ id, title, release_date, vote_average, poster_path, known_for })
 
 						</div>
 						<div className={`${vote_average ? styles.general : styles.wide}`}>
-							{release_date ? release_date.substring(0, 4) : <ul>{known(known_for)}</ul>}
+							{release_date ? release_date.substring(0, 4) : null}
 						</div>
 					</div>
 				</a>
@@ -59,4 +59,4 @@ const Card = ({ id, title, release_date, vote_average, poster_path, known_for })
 	)
 }
 
-export default Card
+export default MovieCard

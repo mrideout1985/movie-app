@@ -3,31 +3,30 @@ import Image from "next/image"
 import styles from "../../styles/Movie.module.scss"
 
 export const getStaticProps = async ({ params }) => {
-	const movie = await api.movie(params.id)
+	const actor = await api.actor(params.id)
 	return {
-		props: { movie }
+		props: { actor }
 	}
 }
 
 export const getStaticPaths = async () => {
-	const popularMovies = await api.popularMovies()
-	const paths = popularMovies.results.map((movie) => ({ params: { id: movie.id } }))
+	const popularActors = await api.popularActors()
+	const paths = popularActors.results.map((actor) => ({ params: { id: actor.id } }))
 	return {
 		paths: [],
 		fallback: true,
 	}
 }
 
-const MovieDetails = (props) => {
+const ActorDetails = (props) => {
 
-	const movie = props.movie
-	console.log("movie", movie)
+	const actor = props.actor
 
 	return (
 		<div className={styles.moviecard}>
-			<p>{movie?.title}</p>
+			<p>{actor?.name}</p>
 		</div >
 	)
 }
 
-export default MovieDetails
+export default ActorDetails

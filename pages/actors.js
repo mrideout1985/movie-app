@@ -2,14 +2,15 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import api from "./api/index"
 import Meta from '../components/meta/meta'
-import Card from '../components/card/card'
+import ActorCard from '../components/cards/actorcard'
+// import Card from '../components/card/card'
 
 
 export default function Actors(props) {
 
 	const actors = props.actors.results
 
-	console.log(actors)
+	console.log("actors", actors)
 
 	return (
 		<div className={styles.container}>
@@ -20,10 +21,10 @@ export default function Actors(props) {
 			<div className={styles.popular}>
 				{actors.map((actor, i) => {
 					return (
-						<Card key={i} id={actor.id} poster_path={actor.profile_path} title={actor.name} known_for={actor.known_for} />
+						<ActorCard key={i} id={actor.id} name={actor.name} profile_path={actor.profile_path} known_for={actor.known_for} />
 					)
-
 				})}
+
 			</div>
 
 
