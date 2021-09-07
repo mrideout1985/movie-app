@@ -1,6 +1,5 @@
 import api from "../api/index"
 import Image from "next/image"
-import styles from "../../styles/Movie.module.scss"
 
 export const getStaticProps = async ({ params }) => {
 	const actor = await api.actor(params.id)
@@ -23,7 +22,7 @@ const ActorDetails = (props) => {
 	const actor = props.actor
 
 	return (
-		<div className={styles.moviecard}>
+		<div className={""}>
 			<p>{actor?.name}</p>
 		</div >
 	)
