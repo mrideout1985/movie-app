@@ -3,6 +3,8 @@
 	margin-top: 1rem;
 	box-shadow: 2px 2px 14px black;
 	transition: transform 0.25s ease-in;
+	padding: 0.5rem;
+	max-width: 270px;
 
 	&:hover {
 		box-shadow: 5px 5px 24px black;
