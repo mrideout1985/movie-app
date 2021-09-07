@@ -1,0 +1,76 @@
+@import "../sass//abstracts/mixins";
+
+.container {
+	background-position: center;
+	background-size: cover;
+	height: 90vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	font-family: "Roboto", sans-serif;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background-color: var(--main-bg-color);
+		width: 100%;
+		opacity: 0.8;
+	}
+
+	.card {
+		z-index: 999;
+		width: 1200px;
+		height: 800px;
+		margin: 4rem 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px 25px;
+
+		.image {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			height: 100%;
+		}
+
+		.information {
+			> div {
+				color: white;
+
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 0px 0px;
+				grid-template-areas:
+					"."
+					".";
+				h2 {
+					margin: 0;
+				}
+				h3 {
+					display: inline-block;
+					margin: 0.5rem 0 1rem 0;
+					font-family: "Arimo";
+					font-style: italic;
+				}
+
+				.additionalinfo {
+					display: flex;
+					align-items: center;
+					color: var(--text-highlighted);
+				}
+
+				p {
+					margin-top: 2rem;
+				}
+			}
+			.trailer {
+				margin-top: 1rem;
+			}
+		}
+	}
+}
