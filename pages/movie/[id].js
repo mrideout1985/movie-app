@@ -37,13 +37,13 @@ const MovieDetails = (props) => {
 			}}>
 
 				<div className={styles.card}>
-					<div className={styles.image}>
-						<Image src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`} alt="image" width={450} height={700} />
+					<div className={styles.imagecontainer}>
+						<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`} alt="image" width={450} height={700} />
 					</div>
 
 					<div className={styles.information}>
 						<div><h2>{movie.title}</h2>
-							<h3>&#34;{movie.tagline}&#34;</h3>
+							{movie.tagline ? <h3>&#34;{movie.tagline}&#34;</h3> : null}
 							<div className={styles.additionalinfo}>
 								{movie.vote_average ? <Circle rating={movie.vote_average} height={"2rem"} color="#80ED99" /> : null}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{movie.release_date ? movie.release_date.substring(0, 4) : null}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{movie.genres.map(genre => genre.name).join(", ")}
 							</div>

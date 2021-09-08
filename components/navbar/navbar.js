@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from "next/link"
 import { useRouter } from "next/router";
 import { SvgMovie } from "../icons/Movie"
@@ -6,7 +6,16 @@ import { SvgMovie } from "../icons/Movie"
 import styles from "../../styles/Navbar.module.scss"
 
 const Navbar = () => {
+
+	const [input, setInput] = useState("");
+	const [search, setSearch] = useState("");
+
+	console.log(input)
+
 	const router = useRouter();
+
+
+
 	return (
 		<nav className={styles.container} aria-label="RMDB Menu">
 			<div className={styles.logo}>
@@ -34,7 +43,9 @@ const Navbar = () => {
 			</div>
 
 			<div className={styles.search}>
-				<input className={styles.styledinput} />
+				<form onSubmit={onSubmit = {}}>
+					<input className={styles.styledinput} value={input} onChange={(e) => setInput(e.target.value)} />
+				</form>
 			</div>
 		</nav>
 	)
