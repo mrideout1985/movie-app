@@ -5,14 +5,31 @@ import { SvgMovie } from "../icons/Movie"
 
 import styles from "../../styles/Navbar.module.scss"
 
-const Navbar = () => {
+
+
+
+
+const Navbar = (props) => {
 
 	const [input, setInput] = useState("");
 	const [search, setSearch] = useState("");
 
-	console.log(input)
-
 	const router = useRouter();
+
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		router.push(`/search/${input}`)
+		setInput("")
+
+	}
+
+
+
+
+
+
+
 
 
 
@@ -43,12 +60,15 @@ const Navbar = () => {
 			</div>
 
 			<div className={styles.search}>
-				<form onSubmit={onSubmit = {}}>
+				<form onSubmit={handleSubmit}>
 					<input className={styles.styledinput} value={input} onChange={(e) => setInput(e.target.value)} />
 				</form>
+				{/* <input onClick={} type="submit" /> */}
 			</div>
 		</nav>
 	)
 }
 
 export default Navbar
+
+
