@@ -4,6 +4,7 @@ import Link from "next/link"
 import styles from "../../styles/Card.module.scss"
 import Circle from '../icons/Circle'
 import { useRouter } from 'next/router'
+import placeholder from "../../public/placeholder.png"
 
 
 const ActorCard = ({ id, name, profile_path, known_for }) => {
@@ -42,7 +43,8 @@ const ActorCard = ({ id, name, profile_path, known_for }) => {
 			<Link href={`/actor/${id}`}>
 				<a>
 					<h3>{short_title(name)}</h3>
-					<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${profile_path}`} height={420} width={280} alt="movie poster" />
+					{profile_path ? <Image className={styles.image} src={`https://image.tmdb.org/t/p/original${profile_path}`} height={420} width={280} alt="movie poster" />
+						: <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={420} width={280} />}
 					<div className={styles.info}>
 
 						{/* <div className={`${vote_average ? styles.rating : styles.dissapear}`}>

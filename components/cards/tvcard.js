@@ -4,6 +4,8 @@ import Link from "next/link"
 import styles from "../../styles/Card.module.scss"
 import Circle from '../icons/Circle'
 import { useRouter } from 'next/router'
+import placeholder from "../../public/placeholder.png"
+
 
 
 const TvCard = ({ id, name, first_air_date, vote_average, poster_path }) => {
@@ -40,8 +42,8 @@ const TvCard = ({ id, name, first_air_date, vote_average, poster_path }) => {
 			<Link href={`/tv/${id}`}>
 				<a>
 					<h3>{short_name(name)}</h3>
-					<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
-					<div className={styles.info}>
+					{poster_path ? <Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
+						: <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={420} width={280} />}					<div className={styles.info}>
 
 						<div className={`${vote_average ? styles.rating : styles.dissapear}`}>
 							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : null}
