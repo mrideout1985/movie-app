@@ -1,13 +1,11 @@
 .container {
 	color: white;
 	margin-top: 1rem;
-	box-shadow: 2px 2px 14px black;
 	transition: transform 0.25s ease-in;
 	padding: 0.5rem;
 	max-width: 270px;
 
 	&:hover {
-		box-shadow: 5px 5px 24px black;
 		transform: scale(1.03);
 	}
 	a {
@@ -33,6 +31,8 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: row;
+			font-family: "Arimo", sans-serif;
+
 			.rating {
 				display: flex;
 				justify-content: left;
@@ -51,6 +51,8 @@
 			.wide {
 				width: 100%;
 				margin: 0;
+				font-family: "Arimo", sans-serif;
+
 				ul {
 					list-style: none;
 					padding: 0;
