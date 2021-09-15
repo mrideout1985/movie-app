@@ -50,8 +50,8 @@ const MovieCard = ({ id, title, release_date, vote_average, poster_path }) => {
 					}
 					<div className={styles.info}>
 
-						<div className={`${vote_average ? styles.rating : styles.dissapear}`}>
-							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : null}
+						<div className={styles.rating}>
+							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : <Circle rating={"?"} height={"2rem"} color="#80ED99" />}
 
 						</div>
 						<div className={`${vote_average ? styles.general : styles.wide}`}>

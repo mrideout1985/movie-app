@@ -24,7 +24,7 @@ const ActorCard = ({ id, name, profile_path, known_for }) => {
 				if (media) {
 					return (
 						// eslint-disable-next-line @next/next/link-passhref
-						<li key={i}><Link href={`/movie/${media.id}`}><div>{media.title?.length > 0 ? media.title : null}
+						<li key={i}><Link href={`/movie/${media.id}`}><div>{media.title?.length > 0 ? media.title + "." : ""}
 						</div></Link></li>
 					)
 				} else {
@@ -51,7 +51,7 @@ const ActorCard = ({ id, name, profile_path, known_for }) => {
 							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : null}
 
 						</div> */}
-						<div className={`${styles.wide}`}>
+						<div className={`${styles.knownfor}`}>
 							<ul>
 								{known(known_for)}
 							</ul>

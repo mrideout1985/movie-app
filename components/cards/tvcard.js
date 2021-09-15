@@ -45,8 +45,8 @@ const TvCard = ({ id, name, first_air_date, vote_average, poster_path }) => {
 					{poster_path ? <Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
 						: <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={420} width={280} />}					<div className={styles.info}>
 
-						<div className={`${vote_average ? styles.rating : styles.dissapear}`}>
-							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : null}
+						<div className={styles.rating}>
+							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : <Circle rating={"?"} height={"2rem"} color="#80ED99" />}
 
 						</div>
 						<div className={`${vote_average ? styles.general : styles.wide}`}>
