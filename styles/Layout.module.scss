@@ -1,3 +1,22 @@
 .container {
 	background-color: var(--main-bg-color);
 }
+
+.footer {
+	background-color: var(--main-bg-color);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 4rem;
+	color: white;
+	font-family: "Roboto", sans-serif;
+	padding: 2rem;
+
+	a {
+		color: var(--text-highlighted);
+		margin-left: 0.35rem;
+		&:visited {
+			color: var(--text-highlighted);
+		}
+	}
+}
