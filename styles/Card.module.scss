@@ -7,6 +7,13 @@
 
 	&:hover {
 		transform: scale(1.03);
+
+		h3 {
+			color: var(--text-highlighted);
+		}
+		.general {
+			color: var(--text-highlighted);
+		}
 	}
 	a {
 		text-decoration: none;
@@ -21,6 +28,10 @@
 			font-weight: 100;
 			color: white;
 			margin: 1rem 0 1rem 0;
+			transition: all 0.25s ease-in-out;
+
+			&:hover {
+			}
 		}
 
 		.image {
@@ -32,6 +43,7 @@
 			justify-content: space-between;
 			flex-direction: row;
 			font-family: "Arimo", sans-serif;
+			width: 100%;
 
 			.rating {
 				display: flex;
@@ -40,26 +52,35 @@
 				flex: 1;
 				margin: 1rem;
 			}
+
 			.general {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				flex: 1;
 				margin: 0;
+				transition: transform 0.25s ease-in;
 			}
 
-			.wide {
+			.knownfor {
+				display: flex;
+				justify-content: left;
+				align-items: flex-end;
 				width: 100%;
+				flex-wrap: wrap;
 				margin: 0;
-				font-family: "Arimo", sans-serif;
 
 				ul {
 					list-style: none;
 					padding: 0;
 					li {
 						font-weight: 500;
-						margin: 0.2rem 0;
-						color: var(--text-highlighted);
+						margin: 0 0 0.5rem 0;
+						transition: all 0.25s ease-in-out;
+						color: white;
+						&:hover {
+							color: var(--text-highlighted);
+						}
 					}
 				}
 			}

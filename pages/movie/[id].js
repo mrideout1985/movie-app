@@ -1,7 +1,7 @@
 import api from "../api/index"
 import Image from "next/image"
 import Circle from "../../components/icons/Circle"
-import styles from "../../styles/MoviePage.module.scss"
+import styles from "../../styles/MediaPage.module.scss"
 
 export const getStaticProps = async ({ params }) => {
 	const movie = await api.movie(params.id)
