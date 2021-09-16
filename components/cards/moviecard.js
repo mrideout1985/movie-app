@@ -44,9 +44,9 @@ const MovieCard = ({ id, title, release_date, vote_average, poster_path }) => {
 			<Link href={`/movie/${id}`}>
 				<a>
 					<h3>{short_title(title)}</h3>
-					{!poster_path ? <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={420} width={280} /> :
+					{!poster_path ? <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={400} width={260} /> :
 
-						<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={420} width={280} alt="movie poster" />
+						<Image className={styles.image} src={`https://image.tmdb.org/t/p/original${poster_path}`} height={400} width={260} alt="movie poster" />
 					}
 					<div className={styles.info}>
 
