@@ -3,7 +3,6 @@
 .container {
 	background-position: center;
 	background-size: cover;
-	height: 90vh;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -23,22 +22,36 @@
 
 	.card {
 		z-index: 999;
-		width: 1200px;
-		height: 800px;
 		margin: 4rem 2rem;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto min-content;
 		gap: 20px 25px;
 
-		.image {
+		@include respond(phone) {
 			display: flex;
-			justify-content: center;
-			align-items: flex-start;
-			border-radius: 10px;
-			height: 100%;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		@include respond(tab-port) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.imagecontainer {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			.image {
+				border-radius: 10px;
+				justify-self: center;
+			}
 		}
 
 		.information {
+			display: flex;
+			flex-direction: column;
 			> div {
 				color: white;
 				display: grid;
@@ -48,6 +61,7 @@
 				grid-template-areas:
 					"."
 					".";
+
 				h2 {
 					margin: 0;
 				}
@@ -56,20 +70,53 @@
 					margin: 0.5rem 0 1rem 0;
 					font-family: "Arimo";
 					font-style: italic;
+					font-size: larger;
+					@include respond(phone) {
+						margin: 0.2rem 0 0.5rem 0;
+						font-size: large;
+					}
 				}
 
 				.additionalinfo {
 					display: flex;
 					align-items: center;
 					color: var(--text-highlighted);
+					margin-bottom: 5re;
+
+					@include respond(phone) {
+						margin: 0.2rem 0 0.5rem 0;
+						font-size: 0.8rem;
+					}
 				}
 
 				p {
-					margin-top: 2rem;
+					margin-bottom: 2.5rem;
+					@include respond(phone) {
+						font-size: 0.7rem;
+					}
+
+					@include respond(tab-port) {
+						font-size: 0.9rem;
+					}
 				}
 			}
 			.trailer {
-				margin-top: 1rem;
+				iframe {
+					width: 600px;
+					height: 420px;
+				}
+				@include respond(card-hack) {
+					iframe {
+						width: 420px;
+						height: 270px;
+					}
+				}
+				@include respond(phone) {
+					iframe {
+						height: 100%;
+						width: 100%;
+					}
+				}
 			}
 		}
 	}

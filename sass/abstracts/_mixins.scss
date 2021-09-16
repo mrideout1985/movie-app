@@ -11,7 +11,7 @@
 
 @mixin respond($breakpoint) {
 	@if $breakpoint == phone {
-		@media (max-width: 700px) {
+		@media (max-width: 600px) {
 			@content;
 		}
 	}
@@ -27,6 +27,17 @@
 	}
 	@if $breakpoint == big-desktop {
 		@media (max-width: 1800px) {
+			@content;
+		}
+	}
+	@if $breakpoint == card-hack {
+		@media (max-width: 1000px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == nav-hack {
+		@media (max-width: 704px) {
 			@content;
 		}
 	}

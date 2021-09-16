@@ -80,3 +80,21 @@
 		}
 	}
 }
+
+@include respond(nav-hack) {
+	.container {
+		flex-direction: column;
+		.links {
+			.default {
+				margin: 0.5rem;
+			}
+		}
+
+		.search {
+			margin: 1rem;
+			.styledinput {
+				height: 1.5rem;
+			}
+		}
+	}
+}
