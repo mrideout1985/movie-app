@@ -1,120 +1,200 @@
 @import "../sass//abstracts/mixins";
 
-.container {
-	background-position: center;
-	background-size: cover;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	font-family: "Roboto", sans-serif;
+// .container {
+// 	background-position: center;
+// 	background-size: cover;
+// 	position: relative;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: flex-start;
+// 	font-family: "Roboto", sans-serif;
 
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		background-color: var(--main-bg-color);
-		width: 100%;
-		opacity: 0.8;
-	}
+// 	&:after {
+// 		content: "";
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		height: 100%;
+// 		background-color: var(--main-bg-color);
+// 		width: 100%;
+// 		opacity: 0.8;
+// 	}
+
+// 	.card {
+// 		z-index: 999;
+// 		margin: 4rem 2rem;
+// 		display: grid;
+// 		grid-template-columns: auto min-content;
+// 		grid-template-rows: 1fr 1fr;
+// 		gap: 20px 25px;
+
+// 		.information {
+// 			display: flex;
+// 			flex-direction: column;
+// 			> div {
+// 				color: white;
+// 				display: grid;
+// 				grid-template-columns: 1fr;
+// 				grid-template-rows: 1fr 1fr;
+// 				gap: 0px 0px;
+// 				grid-template-areas:
+// 					"."
+// 					".";
+
+// 				h2 {
+// 					margin: 0;
+// 				}
+// 				h3 {
+// 					display: inline-block;
+// 					margin: 0.5rem 0 1rem 0;
+// 					font-family: "Arimo";
+// 					font-style: italic;
+// 					font-size: larger;
+// 					@include respond(phone) {
+// 						margin: 0.2rem 0 0.5rem 0;
+// 						font-size: large;
+// 					}
+// 				}
+
+// 				.additionalinfo {
+// 					display: flex;
+// 					align-items: center;
+// 					color: var(--text-highlighted);
+// 					margin-bottom: 5re;
+
+// 					@include respond(phone) {
+// 						margin: 0.2rem 0 0.5rem 0;
+// 						font-size: 0.8rem;
+// 					}
+// 				}
+
+// 				p {
+// 					margin-bottom: 2.5rem;
+// 					@include respond(phone) {
+// 						font-size: 0.7rem;
+// 					}
+
+// 					@include respond(tab-port) {
+// 						font-size: 0.9rem;
+// 					}
+// 				}
+// 			}
+// 			.trailer {
+// 				iframe {
+// 					width: 600px;
+// 					height: 420px;
+// 				}
+// 				@include respond(card-hack) {
+// 					iframe {
+// 						width: 420px;
+// 						height: 270px;
+// 					}
+// 				}
+// 				@include respond(phone) {
+// 					iframe {
+// 						height: 100%;
+// 						width: 100%;
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		.cast {
+// 			h3 {
+// 				color: white;
+// 			}
+// 		}
+// 	}
+// }
+
+.container {
+	width: 100%;
 
 	.card {
-		z-index: 999;
-		margin: 4rem 2rem;
-		display: grid;
-		grid-template-columns: auto min-content;
-		gap: 20px 25px;
-
-		@include respond(phone) {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #000000d3;
+			z-index: 1;
 		}
-
-		@include respond(tab-port) {
+		.mediaInfo {
 			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
+			justify-content: center;
+			background-position: center;
+			background-size: cover;
+			position: relative;
+			gap: 2rem;
+			color: #fff;
+			padding: 4rem;
+			flex-basis: 1200px;
 
-		.imagecontainer {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr;
 			.image {
-				border-radius: 10px;
-				justify-self: center;
-			}
-		}
+				z-index: 2;
 
-		.information {
-			display: flex;
-			flex-direction: column;
-			> div {
-				color: white;
-				display: grid;
-				grid-template-columns: 1fr;
-				grid-template-rows: 1fr 1fr;
-				gap: 0px 0px;
-				grid-template-areas:
-					"."
-					".";
-
-				h2 {
-					margin: 0;
+				img {
+					border-radius: 15px;
 				}
-				h3 {
-					display: inline-block;
-					margin: 0.5rem 0 1rem 0;
-					font-family: "Arimo";
-					font-style: italic;
-					font-size: larger;
-					@include respond(phone) {
-						margin: 0.2rem 0 0.5rem 0;
-						font-size: large;
+			}
+			.generalInfo {
+				z-index: 2;
+				flex: 2 1 700px;
+				display: flex;
+				flex-direction: column;
+
+				.title {
+					font-family: Roboto;
+					h1 {
+						margin-top: 0;
+						font-size: 1.8rem;
+					}
+
+					.tagline {
+						color: var(--text-highlighted);
+					}
+
+					.rating {
+						display: flex;
+						align-items: center;
+
+						h3 {
+							border: 3px solid var(--text-highlighted);
+							font-size: 1rem;
+							padding: 0.3rem;
+							border-radius: 50%;
+							color: var(--text-highlighted);
+						}
+
+						.release_date {
+						}
+					}
+
+					.overview {
+						p {
+							display: block;
+							margin-block-start: 1em;
+							margin-block-end: 1em;
+							margin-inline-start: 0px;
+							margin-inline-end: 0px;
+						}
 					}
 				}
 
-				.additionalinfo {
+				.trailer {
 					display: flex;
-					align-items: center;
-					color: var(--text-highlighted);
-					margin-bottom: 5re;
-
-					@include respond(phone) {
-						margin: 0.2rem 0 0.5rem 0;
-						font-size: 0.8rem;
-					}
-				}
-
-				p {
-					margin-bottom: 2.5rem;
-					@include respond(phone) {
-						font-size: 0.7rem;
-					}
-
-					@include respond(tab-port) {
-						font-size: 0.9rem;
-					}
-				}
-			}
-			.trailer {
-				iframe {
-					width: 600px;
-					height: 420px;
-				}
-				@include respond(card-hack) {
+					height: 50%;
+					margin-top: 2.5rem;
 					iframe {
-						width: 420px;
-						height: 270px;
-					}
-				}
-				@include respond(phone) {
-					iframe {
+						flex-basis: 800px;
 						height: 100%;
-						width: 100%;
+						border-radius: 10px;
 					}
 				}
 			}
