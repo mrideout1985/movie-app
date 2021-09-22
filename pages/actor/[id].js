@@ -1,6 +1,6 @@
 import api from "../api/index"
 import Image from "next/image"
-import styles from "../../styles/MediaPage.module.scss"
+import styles from "../../styles/ActorPage.module.scss"
 
 
 export const getStaticProps = async ({ params }) => {
@@ -44,18 +44,8 @@ const ActorDetails = (props) => {
 							</div>
 							<p>{actor.biography}</p>
 						</div>
-						{/* <div className={styles.trailer}>
-							<iframe
-								id="ytplayer"
-								width="640"
-								height="360"
-								src={`https://www.youtube.com/embed/${handleTrailer(tv)}?autoplay=0`}
-								frameBorder="0"
-							></iframe>
-						</div> */}
 					</div>
 				</div>
-
 			</section >
 		)
 	} else {

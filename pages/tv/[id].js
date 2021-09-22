@@ -2,6 +2,7 @@ import api from "../api/index"
 import Image from "next/image"
 import { useMedia } from 'react-use';
 import styles from "../../styles/MediaPage.module.scss"
+import ActorCard from "../../components/cards/actorcard";
 
 export const getStaticProps = async ({ params }) => {
 	const tv = await api.tv(params.id)
@@ -28,7 +29,6 @@ const TvDetails = (props) => {
 	const tab_land = useMedia('(max-width: 1140px)');
 	const large = useMedia('(max-width: 1800px)');
 
-
 	const handleTrailer = (tv) => {
 		return tv.videos?.results.find((video) => video.type === "Trailer")?.key
 
@@ -36,6 +36,7 @@ const TvDetails = (props) => {
 
 	if (tv) {
 		return (
+
 
 			<div className={styles.container}>
 				<div className={styles.card} style={{
@@ -58,7 +59,7 @@ const TvDetails = (props) => {
 								<h1>{tv.name}</h1>
 								<div className={styles.tagline}>{tv.tagline}</div>
 								<div className={styles.rating}>
-									{tv.vote_average ? <h3>{tv.vote_average}</h3> : null}&nbsp;&nbsp;-&nbsp;&nbsp;{tv.release_date ? <div className={styles.release_date}>{tv.release_date.substring(0, 4)}</div> : null}&nbsp;&nbsp;-&nbsp;&nbsp;<div className={styles.genres}>{tv.genres.map(genre => genre.name).join(", ")}</div>
+									{tv.vote_average ? <h3>{tv.vote_average}</h3> : null}&nbsp;&nbsp;&nbsp;&nbsp;{tv.first_air_date ? <div className={styles.release_date}>{tv.first_air_date.substring(0, 4)}</div> : null}&nbsp;&nbsp;&nbsp;&nbsp;<div className={styles.genres}>{tv.genres.map(genre => genre.name).join(", ")}</div>
 								</div>
 								<div className={styles.overview}>
 									{tv.overview}
@@ -69,16 +70,30 @@ const TvDetails = (props) => {
 									id="ytplayer"
 									src={`https://www.youtube.com/embed/${handleTrailer(tv)}?autoplay=0`}
 									frameBorder="0"
-
 								></iframe>
 							</div>
 						</div>
 
 					</div>
-					<div className={styles.cast}>
-					</div>
 				</div>
-			</div>)
+
+				<section className={styles.cast}>
+					<h2>Cast</h2>
+					<div className={styles.castlist}>
+						{tv.credits.cast.slice(0, 12).map((actor, i) => (
+							actor.profile_path ? <ActorCard key={i} id={actor.id} name={actor.name} profile_path={actor.profile_path} imageHeight={280} imageWidth={200} />
+								: null
+						))}
+					</div>
+
+				</section>
+			</div>
+
+
+
+
+
+		)
 	} else {
 		return null
 	}

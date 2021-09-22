@@ -2,6 +2,7 @@ import api from "../api/index"
 import Image from "next/image"
 import styles from "../../styles/MediaPage.module.scss"
 import { useMedia } from 'react-use';
+import ActorCard from "../../components/cards/actorcard";
 
 
 
@@ -75,11 +76,18 @@ const MovieDetails = (props) => {
 								></iframe>
 							</div>
 						</div>
-
-					</div>
-					<div className={styles.cast}>
 					</div>
 				</div>
+				<section className={styles.cast}>
+					<h2>Cast</h2>
+					<div className={styles.castlist}>
+						{movie.credits.cast.slice(0, 10).map((actor, i) => (
+							actor.profile_path ? <ActorCard key={i} id={actor.id} name={actor.name} profile_path={actor.profile_path} imageHeight={280} imageWidth={200} />
+								: null
+						))}
+					</div>
+
+				</section>
 			</div>
 
 

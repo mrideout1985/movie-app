@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import placeholder from "../../public/placeholder.png"
 
 
-const ActorCard = ({ id, name, profile_path, known_for }) => {
+const ActorCard = ({ id, name, profile_path, known_for, imageHeight, imageWidth }) => {
 
 	const router = useRouter()
 
@@ -43,14 +43,9 @@ const ActorCard = ({ id, name, profile_path, known_for }) => {
 			<Link href={`/actor/${id}`}>
 				<a>
 					<h3>{short_title(name)}</h3>
-					{profile_path ? <Image className={styles.image} src={`https://image.tmdb.org/t/p/original${profile_path}`} height={420} width={280} alt="movie poster" />
+					{profile_path ? <Image className={styles.image} src={`https://image.tmdb.org/t/p/original${profile_path}`} height={imageHeight ? imageHeight : 420} width={imageWidth ? imageWidth : 280} alt="movie poster" />
 						: <Image className={styles.image} src={placeholder} alt="movie-image-not-found" height={420} width={280} />}
 					<div className={styles.info}>
-
-						{/* <div className={`${vote_average ? styles.rating : styles.dissapear}`}>
-							{vote_average ? <Circle rating={vote_average} height={"2rem"} color="#80ED99" /> : null}
-
-						</div> */}
 						<div className={`${styles.knownfor}`}>
 							<ul>
 								{known(known_for)}
