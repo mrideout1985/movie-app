@@ -24,6 +24,8 @@ const ActorDetails = (props) => {
 	const actor = props.actor
 	console.log(actor)
 
+
+
 	if (actor) {
 		return (
 			<section className={styles.container} style={{
