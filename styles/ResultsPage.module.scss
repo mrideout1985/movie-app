@@ -1,3 +1,5 @@
+@import "../sass//abstracts/mixins";
+
 .container {
 	background-color: var(--main-bg-color);
 	padding: 1rem;
@@ -23,5 +25,36 @@
 			". . . . ."
 			". . . . ."
 			". . . . .";
+	}
+
+	@include respond(tab-port) {
+		.results {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+			max-width: 1700px;
+			grid-template-areas:
+				". . . ."
+				". . . ."
+				". . . ."
+				". . . ."
+				". . . .";
+			img {
+			}
+			h3 {
+				font-size: 1rem;
+			}
+		}
+	}
+	@include respond(phone) {
+		.results {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			img {
+			}
+			h3 {
+			}
+		}
 	}
 }
