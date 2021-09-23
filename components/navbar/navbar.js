@@ -24,22 +24,13 @@ const Navbar = (props) => {
 
 	}
 
-
-
-
-
-
-
-
-
-
 	return (
 		<nav className={styles.container} aria-label="RMDB Menu">
 			<div className={styles.logo}>
 				<Link href="/" role="menuitem" tabindex="-1">
 					<a>
 						<SvgMovie color={"fff"} height={50} width={50} />
-						<h1>RMDB</h1>
+						<h1>RMDb</h1>
 					</a>
 				</Link>
 			</div>
@@ -60,10 +51,10 @@ const Navbar = (props) => {
 			</div>
 
 			<div className={styles.search}>
-				<form onSubmit={handleSubmit}>
-					<input className={styles.styledinput} value={input} onChange={(e) => setInput(e.target.value)} />
+				<form className={styles.form} onSubmit={handleSubmit}>
+					<input type="search" className={styles.styledinput} value={input} onChange={(e) => setInput(e.target.value)} placeholder="Search RMDb" />
+					<input type="submit" value="SEARCH" onClick={handleSubmit} />
 				</form>
-				{/* <input onClick={} type="submit" /> */}
 			</div>
 		</nav>
 	)

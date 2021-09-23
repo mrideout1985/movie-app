@@ -37,7 +37,12 @@
 	}
 
 	@if $breakpoint == nav-hack {
-		@media (max-width: 704px) {
+		@media (max-width: 792px) {
+			@content;
+		}
+	}
+	@if $breakpoint == search-hack {
+		@media (max-width: 792px) {
 			@content;
 		}
 	}

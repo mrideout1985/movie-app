@@ -21,6 +21,10 @@
 			text-decoration: none;
 			color: var(--text-main);
 
+			&:focus {
+				box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+			}
+
 			h1 {
 				font-weight: 900;
 			}
@@ -38,6 +42,9 @@
 
 		a {
 			margin: 0 1rem;
+			&:focus {
+				box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+			}
 		}
 
 		.default {
@@ -52,16 +59,54 @@
 
 	.search {
 		margin: 0 1rem;
-		.styledinput {
-			border-radius: 15px;
-			outline: none;
-			border: 2px solid var(--tertiary-bg-color);
-			background: var(--secondary-bg-color);
-			font-size: 1rem;
-			height: 2rem;
-			color: white;
-			font-family: "Roboto", sans-serif;
-			padding: 0 0 0 1rem;
+		width: 40%;
+
+		.form {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			input[type="submit"] {
+				border: 2px solid transparent;
+				color: white;
+				background: var(--main-bg-color);
+				outline: none;
+				margin: 1rem;
+				box-sizing: border-box;
+				border-radius: 8px;
+				height: 2rem;
+				font-family: "Roboto", sans-serif;
+				font-weight: 300;
+				font-size: 1rem;
+				padding: 0 1rem;
+				transition: all 0.15s ease-out;
+
+				&:focus {
+					box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+				}
+
+				&:hover {
+					border: 2px solid var(--tertiary-bg-color);
+				}
+			}
+
+			.styledinput {
+				border-radius: 8px;
+				outline: none;
+				border: 2px solid var(--tertiary-bg-color);
+				background: var(--secondary-bg-color);
+				font-size: 1rem;
+				height: 2rem;
+				width: 100%;
+				color: white;
+				font-family: "Roboto", sans-serif;
+				padding: 0 0 0 1rem;
+
+				&:focus {
+					box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+				}
+			}
 		}
 	}
 }
@@ -77,6 +122,14 @@
 
 		.search {
 			margin: 1rem;
+			.form {
+				flex-direction: row;
+				input[type="submit"] {
+					display: none;
+				}
+				input[type="search"] {
+				}
+			}
 		}
 	}
 }
@@ -94,6 +147,26 @@
 			margin: 1rem;
 			.styledinput {
 				height: 1.5rem;
+			}
+		}
+	}
+}
+
+@include respond(search-hack) {
+	.container {
+		.search {
+			width: 50%;
+			.form {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				input[type="search"] {
+					height: 1.5rem;
+				}
+
+				input[type="submit"] {
+					padding: 0.25;
+				}
 			}
 		}
 	}
