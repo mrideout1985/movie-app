@@ -38,15 +38,15 @@ const Navbar = (props) => {
 			<div className={styles.links}>
 				<Link href="/"><a className={[
 					[styles["default"]],
-					[router.pathname === "/" ? styles["active"] : ""],
+					[router?.pathname === "/" ? styles["active"] : ""],
 				].join(" ")}>Movies</a></Link>
 				<Link href="/tvshows"><a className={[
 					[styles["default"]],
-					[router.pathname === "/tvshows" ? styles["active"] : ""],
+					[router?.pathname === "/tvshows" ? styles["active"] : ""],
 				].join(" ")}>TV Shows</a></Link>
 				<Link href="/actors"><a className={[
 					[styles["default"]],
-					[router.pathname === "/actors" ? styles["active"] : ""],
+					[router?.pathname === "/actors" ? styles["active"] : ""],
 				].join(" ")}>Actors</a></Link>
 			</div>
 

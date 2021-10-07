@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-icons": "npx @svgr/cli -d components/icons --ignore-existing public --ext=js"
+    "generate-icons": "npx @svgr/cli -d components/icons --ignore-existing public --ext=js",
+    "test": "jest --watch"
+
   },
   "dependencies": {
     "axios": "^0.21.4",
@@ -21,7 +23,14 @@
   },
   "devDependencies": {
     "@svgr/cli": "^5.5.0",
+    "@testing-library/dom": "^8.7.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.2.4",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
+    "eslint-config-next": "11.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.4",
+    "react-test-renderer": "^17.0.2"
   }
 }
