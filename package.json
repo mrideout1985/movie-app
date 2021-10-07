@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate-icons": "npx @svgr/cli -d components/icons --ignore-existing public --ext=js",
-    "test": "jest --watch"
-
+    "test": "jest --watch",
+    "clear_jest": "jest --clearCache"
   },
   "dependencies": {
     "axios": "^0.21.4",
