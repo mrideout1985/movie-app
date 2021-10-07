@@ -12,8 +12,7 @@ import styles from "../../styles/Navbar.module.scss"
 const Navbar = (props) => {
 
 	const [input, setInput] = useState("");
-	const [search, setSearch] = useState("");
-
+	// const [search, setSearch] = useState("");
 	const router = useRouter();
 
 
@@ -36,7 +35,7 @@ const Navbar = (props) => {
 			</div>
 
 			<div className={styles.links}>
-				<Link href="/"><a className={[
+				<Link role="link" href="/"><a className={[
 					[styles["default"]],
 					[router?.pathname === "/" ? styles["active"] : ""],
 				].join(" ")}>Movies</a></Link>
@@ -53,7 +52,7 @@ const Navbar = (props) => {
 			<div className={styles.search}>
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<input type="search" className={styles.styledinput} value={input} onChange={(e) => setInput(e.target.value)} placeholder="Search RMDb" />
-					<input type="submit" value="SEARCH" onClick={handleSubmit} />
+					<input type="submit" value="SEARCH" />
 				</form>
 			</div>
 		</nav>
