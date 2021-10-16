@@ -33,12 +33,13 @@ export default function Home(props) {
 export const getStaticProps = async () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_URL = "https://api.themoviedb.org/3/";
-  const popularMovieData = await fetch(
+  const res = await fetch(
     `${BASE_URL}movie/popular?api_key=${API_KEY}&page=1`
-  ).then((res) => res.json());
+  )
+  const data = await res.json()
   return {
     props: {
-      popMovieData: popularMovieData,
+      popMovieData: data,
     }
   }
 };
