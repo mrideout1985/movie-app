@@ -1,174 +1,237 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	width: 100%;
-	background-color: var(--main-bg-color);
-	display: flex;
-	align-items: center;
+    max-width: 100%;
+    background-color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
 
-	.logo {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: "Arimo", sans-serif;
-		margin: 0 1rem;
-		flex: 0 1rem;
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Arimo", sans-serif;
+        margin: 0 1rem;
+        flex: 0 1rem;
 
-		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			text-decoration: none;
-			color: var(--text-main);
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
 
-			&:focus {
-				box-shadow: 0px 0px 2px 3px var(--text-highlighted);
-			}
+            &:focus {
+                box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+            }
 
-			h1 {
-				font-weight: 900;
-			}
-		}
-	}
+            h1 {
+                font-weight: 900;
+            }
+        }
+    }
 
-	.links {
-		display: flex;
-		align-items: center;
-		font-family: "Roboto", sans-serif;
-		font-size: 1rem;
-		font-weight: 300;
-		flex: 1;
-		text-transform: uppercase;
+    .links {
+        display: flex;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        flex: 1;
+        text-transform: uppercase;
 
-		a {
-			margin: 0 1rem;
-			&:focus {
-				box-shadow: 0px 0px 2px 3px var(--text-highlighted);
-			}
-		}
+        a {
+            margin: 0 1rem;
+            &:focus {
+                box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+            }
+        }
 
-		.default {
-			text-decoration: none;
-			color: var(--text-main);
-		}
+        .default {
+            text-decoration: none;
+            color: var(--text-main);
+        }
 
-		.active {
-			color: var(--text-highlighted);
-		}
-	}
+        .active {
+            color: var(--text-highlighted);
+        }
+    }
 
-	.search {
-		margin: 0 1rem;
-		width: 40%;
+    .search {
+        margin: 0 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-		.form {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+        @include respond(phone) {
+            display: flex;
+            flex-direction: column;
+        }
 
-			input[type="submit"] {
-				border: 2px solid transparent;
-				color: white;
-				background: var(--main-bg-color);
-				outline: none;
-				margin: 1rem;
-				box-sizing: border-box;
-				border-radius: 8px;
-				height: 2rem;
-				font-family: "Roboto", sans-serif;
-				font-weight: 300;
-				font-size: 1rem;
-				padding: 0 1rem;
-				transition: all 0.15s ease-out;
+        .ul {
+            position: absolute;
+            padding: 0;
+            width: 100%;
+            z-index: 999;
+            color: white;
+            text-decoration: none;
+            list-style: none;
 
-				&:focus {
-					box-shadow: 0px 0px 2px 3px var(--text-highlighted);
-				}
+            .li {
+                background-color: #020101c5;
 
-				&:hover {
-					border: 2px solid var(--tertiary-bg-color);
-					cursor: pointer;
-				}
-			}
+                a {
+                    text-decoration: none;
+                    color: #fff;
 
-			.styledinput {
-				border-radius: 8px;
-				outline: none;
-				border: 2px solid var(--tertiary-bg-color);
-				background: var(--secondary-bg-color);
-				font-size: 1rem;
-				height: 2rem;
-				width: 100%;
-				color: white;
-				font-family: "Roboto", sans-serif;
-				padding: 0 0 0 1rem;
+                    .result {
+                        display: flex;
 
-				&:focus {
-					box-shadow: 0px 0px 2px 3px var(--text-highlighted);
-				}
-			}
-		}
-	}
+                        img {
+                            height: 100px;
+                        }
+
+                        .text {
+                            display: flex;
+                            width: 100%;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-left: 1rem;
+                            font-family: Roboto;
+                        }
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            text-transform: uppercase;
+
+            .login {
+                padding: 0.5rem 2rem;
+                color: white;
+                text-decoration: none;
+            }
+
+            .logout {
+                padding: 0.5rem 2rem;
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input[type="submit"] {
+                border: 2px solid transparent;
+                color: white;
+                background: var(--main-bg-color);
+                outline: none;
+                margin: 1rem;
+                box-sizing: border-box;
+                border-radius: 8px;
+                height: 2rem;
+                font-family: "Roboto", sans-serif;
+                font-weight: 300;
+                font-size: 1rem;
+                padding: 0 1rem;
+                transition: all 0.15s ease-out;
+
+                &:focus {
+                    box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+                }
+
+                &:hover {
+                    border: 2px solid var(--tertiary-bg-color);
+                    cursor: pointer;
+                }
+            }
+
+            .styledinput {
+                border-radius: 8px;
+                outline: none;
+                border: 2px solid var(--tertiary-bg-color);
+                background: var(--secondary-bg-color);
+                font-size: 1rem;
+                height: 2rem;
+                width: 100%;
+                color: white;
+                font-family: "Roboto", sans-serif;
+                padding: 0 0 0 1rem;
+
+                &:focus {
+                    box-shadow: 0px 0px 2px 3px var(--text-highlighted);
+                }
+            }
+        }
+    }
 }
 
 @include respond(phone) {
-	.container {
-		flex-direction: column;
-		.links {
-			.default {
-				margin: 1rem;
-			}
-		}
+    .container {
+        flex-direction: column;
+        .links {
+            .default {
+                margin: 1rem;
+            }
+        }
 
-		.search {
-			margin: 1rem;
-			.form {
-				flex-direction: row;
-				input[type="submit"] {
-					display: none;
-				}
-				input[type="search"] {
-				}
-			}
-		}
-	}
+        .search {
+            margin: 1rem;
+            .form {
+                flex-direction: row;
+                input[type="submit"] {
+                    display: none;
+                }
+                input[type="search"] {
+                }
+            }
+        }
+    }
 }
 
 @include respond(nav-hack) {
-	.container {
-		flex-direction: column;
-		.links {
-			.default {
-				margin: 0.5rem;
-			}
-		}
+    .container {
+        flex-direction: column;
+        .links {
+            .default {
+                margin: 0.5rem;
+            }
+        }
 
-		.search {
-			margin: 1rem;
-			.styledinput {
-				height: 1.5rem;
-			}
-		}
-	}
+        .search {
+            margin: 1rem;
+            .styledinput {
+                height: 1.5rem;
+            }
+        }
+    }
 }
 
 @include respond(search-hack) {
-	.container {
-		.search {
-			width: 50%;
-			.form {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				input[type="search"] {
-					height: 1.5rem;
-				}
+    .container {
+        .search {
+            width: 50%;
+            .form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                input[type="search"] {
+                    height: 1.5rem;
+                }
 
-				input[type="submit"] {
-					padding: 0.25;
-				}
-			}
-		}
-	}
+                input[type="submit"] {
+                    padding: 0.25;
+                }
+            }
+        }
+    }
 }

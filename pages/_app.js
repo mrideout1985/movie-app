@@ -1,13 +1,15 @@
-import Layout from '../components/layout/layout'
-import '../styles/globals.css'
-import "../styles/main.scss"
+import { UserProvider } from "@auth0/nextjs-auth0";
+import Layout from "../components/layout/layout";
+import "../styles/globals.css";
+import "../styles/main.scss";
 function MyApp({ Component, pageProps }) {
-
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+    return (
+        <UserProvider>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </UserProvider>
+    );
 }
 
-export default MyApp
+export default MyApp;
