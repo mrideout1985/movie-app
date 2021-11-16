@@ -1,7 +1,10 @@
 import { table, getMinifiedRecord } from "./utils/Airtable";
+import { getSession, withApiAuthRequired } from "@auth0/nextjs-auth0";
 
-export default async function (req, res) {
+export default withApiAuthRequired(async function (req, res) {
     const { id, fields } = req.body;
+    const { user } = getSession(req);
+
     try {
         const updatedRecords = await table.update([{ id, fields }]);
         res.statusCode = 200;
@@ -11,4 +14,4 @@ export default async function (req, res) {
         res.statusCode = 500;
         res.json({ msn: "Something went wrong" });
     }
-}
+});
