@@ -1,18 +1,36 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
+import Like from "@/components/like/like";
 import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { table, minifyRecords } from "../../pages/api/utils/Airtable";
+import { LikesContext } from "../../context/likesContext";
+import { useEffect, useContext } from "react";
+import styles from "../../styles/Profile.module.scss";
 
-export default function Profile({ user }) {
+export default function Profile({ user, initialLikes }) {
     // eslint-disable-next-line @next/next/no-img-element
-    console.log(user);
+
+    const { likes, setLikes } = useContext(LikesContext);
+
+    useEffect(() => {
+        setLikes(initialLikes);
+    }, []);
+
     return (
-        <div>
-            {user && <img alt="user avatar" src={user.picture} />}
-            <ul>
-                {user.given_name ? (
-                    <li>First Name: {user.given_name}</li>
-                ) : null}
-            </ul>
-            <a href="/api/auth/logout">Logout</a>
+        <div className={styles.container}>
+            <div className={styles.profile}>
+                {user && <img alt="user avatar" src={user.picture} />}
+                <ul>
+                    {user.given_name ? (
+                        <li className={styles["list-item"]}>{user.name}</li>
+                    ) : null}
+                    {user.nickname ? (
+                        <li className={styles["list-item"]}>{user.nickname}</li>
+                    ) : null}
+                </ul>
+                <ul className={styles["likes"]}>
+                    {likes &&
+                        likes.map((like) => <Like key={like.id} like={like} />)}
+                </ul>
+            </div>
         </div>
     );
 }
@@ -22,6 +40,7 @@ export const getServerSideProps = withPageAuthRequired({
         const { req, res, query } = ctx;
         const { profile } = query;
         const session = getSession(req, res);
+        const likes = await table.select({}).firstPage();
 
         if (profile !== session.user.nickname) {
             return {
@@ -33,7 +52,9 @@ export const getServerSideProps = withPageAuthRequired({
         }
 
         return {
-            props: {},
+            props: {
+                initialLikes: minifyRecords(likes),
+            },
         };
     },
 });

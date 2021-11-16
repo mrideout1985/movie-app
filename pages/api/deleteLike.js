@@ -1,7 +1,6 @@
-/* eslint-disable import/no-anonymous-default-export */
 import { table, getMinifiedRecord } from "./utils/Airtable";
 
-export default async (req, res) => {
+export default async function (req, res) {
     const { id } = req.body;
     try {
         const deletedRecords = await table.destroy([id]);
@@ -12,4 +11,4 @@ export default async (req, res) => {
         res.statusCode = 500;
         res.json({ msn: "Something went wrong" });
     }
-};
+}

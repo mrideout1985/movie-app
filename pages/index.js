@@ -3,10 +3,8 @@ import styles from "../styles/Home.module.scss";
 import api from "./api/index";
 import Meta from "../components/meta/meta";
 import MovieCard from "../components/cards/moviecard";
-import { table, minifyRecords } from "../pages/api/utils/Airtable";
 
 export default function Home(props) {
-    console.log(props);
     return (
         <div className={styles.container}>
             <Meta title={"HOME"}>
@@ -54,11 +52,9 @@ export async function getServerSideProps(context) {
     const res = await fetch(
         `${BASE_URL}movie/popular?api_key=${API_KEY}&page=1`
     );
-    const likes = await table.select({}).firstPage();
     const data = await res.json();
     return {
         props: {
-            initialLikes: minifyRecords(likes),
             popMovieData: data,
         },
     };

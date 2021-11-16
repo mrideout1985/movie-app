@@ -135,7 +135,10 @@ const Navbar = () => {
                         </a>
                     ) : (
                         <>
-                            <a href={`/profile/${user?.nickname ?? "_"}`}>
+                            <a
+                                className={styles.login}
+                                href={`/profile/${user?.nickname ?? "_"}`}
+                            >
                                 Profile
                             </a>
                             <a

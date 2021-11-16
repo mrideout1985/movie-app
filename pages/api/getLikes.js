@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { table, minifyRecords } from "./utils/Airtable";
 
-export default async (req, res) => {
+export default async function (req, res) {
     try {
         const records = await table.select({}).firstPage();
         const minifiedRecords = minifyRecords(records);
@@ -11,4 +11,4 @@ export default async (req, res) => {
         res.statusCode = 500;
         res.json({ msn: "Something went wrong" });
     }
-};
+}
