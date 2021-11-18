@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/MediaPage.module.scss";
 import { useMedia } from "react-use";
 import ActorCard from "../../components/cards/actorcard";
+import { Heart } from "@/components/icons";
 
 export const getStaticProps = async ({ params }) => {
     const movie = await api.movie(params.id);

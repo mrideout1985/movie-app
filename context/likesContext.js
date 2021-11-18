@@ -24,7 +24,6 @@ const LikesProvider = ({ children }) => {
             });
             const newLike = await res.json();
             setLikes((prevLikes) => {
-                console.log("newLike", newLike);
                 return [newLike, ...prevLikes];
             });
         } catch (err) {

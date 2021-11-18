@@ -1,5 +1,5 @@
 import Like from "@/components/like/like";
-import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 import { table, minifyRecords } from "../../pages/api/utils/Airtable";
 import { LikesContext } from "../../context/likesContext";
 import { useEffect, useContext } from "react";
@@ -29,8 +29,7 @@ export default function Profile({ user, initialLikes }) {
                 </ul>
                 {user && (
                     <>
-                        <h1>Films to watch</h1>
-                        <LikeForm />
+                        <h1>Watch list</h1>
                         <ul className={styles["likes"]}>
                             {likes &&
                                 likes.map((like) => (

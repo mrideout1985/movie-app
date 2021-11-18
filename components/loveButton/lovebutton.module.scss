@@ -1,0 +1,16 @@
+.btn {
+    background: none;
+    border: none;
+    padding: none;
+    cursor: pointer;
+
+    &:hover {
+        svg {
+            transform: scale(1.2);
+        }
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
