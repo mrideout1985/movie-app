@@ -1,37 +1,38 @@
 .container {
-    height: 100vh;
-    background-color: lightgray;
+  height: 100vh;
+  font-family: Roboto;
 
-    .profile {
-        padding: 1rem;
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+  .profile {
+    padding-top: 1rem;
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+    .user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        border-radius: 50%;
+        margin: 1rem;
+        object-fit: cover;
+      }
 
-            .list-item {
-                font-size: 2.5rem;
-                font-weight: 600;
-                font-family: Roboto;
-                text-align: center;
-                margin: 1rem auto;
-            }
-        }
-
-        .likes {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            li {
-            }
-        }
+      .user-data {
+        color: white;
+      }
     }
+
+    .watchlist {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      h1 {
+          margin-left: 1rem;
+          color: #fff;
+      }
+      .likes {       
+        display: block;
+        margin-left: 1rem;
+      }
+    }
+  }
 }
