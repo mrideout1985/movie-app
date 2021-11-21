@@ -16,13 +16,6 @@ export default function Like({ like }) {
 
     return (
         <li className={styles["list-item"]}>
-            <input
-                type="checkbox"
-                name="completed"
-                id="liked"
-                checked={like.fields.like}
-                onChange={handleToggleLike}
-            />
             <p>{like.fields.name}</p>
             <button
                 onClick={() => deleteLike(like.id)}

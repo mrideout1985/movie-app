@@ -18,25 +18,25 @@ export default function Profile({ user, initialLikes }) {
     return (
         <div className={styles.container}>
             <div className={styles.profile}>
+                <div className={styles.user}>
                 {user && <img alt="user avatar" src={user.picture} />}
-                <ul>
                     {user.given_name ? (
-                        <li className={styles["list-item"]}>{user.name}</li>
+                        <div className={styles["user-data"]}>{user.name}</div>
                     ) : null}
                     {user.nickname ? (
-                        <li className={styles["list-item"]}>{user.nickname}</li>
+                        <div className={styles["user-data"]}>{user.nickname}</div>
                     ) : null}
-                </ul>
+                </div>
                 {user && (
-                    <>
+                    <div className={styles.watchlist}>
                         <h1>Watch list</h1>
-                        <ul className={styles["likes"]}>
+                        <div className={styles["likes"]}>
                             {likes &&
                                 likes.map((like) => (
                                     <Like key={like.id} like={like} />
                                 ))}
-                        </ul>
-                    </>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

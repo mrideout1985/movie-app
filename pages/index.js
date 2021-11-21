@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
-import api from "./api/index";
 import Meta from "../components/meta/meta";
 import MovieCard from "../components/cards/moviecard";
 
 export default function Home(props) {
+    console.log(props)
     return (
         <div className={styles.container}>
             <Meta title={"HOME"}>
@@ -12,8 +12,7 @@ export default function Home(props) {
             </Meta>
             <h2>Popular Movies</h2>
             <div className={styles.popular}>
-                {props.HeadpopMovieData ??
-                    props.popMovieData?.results.map((movie, i) => {
+                {props.popMovieData && props.popMovieData?.results.map((movie, i) => {
                         return (
                             <MovieCard
                                 key={i}
